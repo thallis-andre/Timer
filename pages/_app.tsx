@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           property="og:description"
           content="Para finalmente a gente ter o nosso date perfeito"
         />
-        <meta property="og:image" content="https://i.ibb.co/xJmbv2L/Thumb.png" />
+        <meta property="og:image" content="../public/FullLogo.svg" />
 
         <meta property="twitter:card" content="summary_large_image" />
         {/* <meta property="twitter:url" content="https://metatags.io/" /> */}
@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           property="twitter:description"
           content="Para finalmente a gente ter o nosso date perfeito"
         />
-        <meta property="twitter:image" content="https://i.ibb.co/xJmbv2L/Thumb.png" />
+        <meta property="twitter:image" content="../public/FullLogo.svg" />
       </Head>
       <Component {...pageProps} />
     </>
