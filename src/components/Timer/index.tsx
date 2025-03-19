@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import styles from './styles.module.scss';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import fullLogo from '../../../public/FullLogo.svg';
+import styles from './styles.module.scss';
 
 type TimerType = {
   weeks: number;
@@ -15,7 +15,7 @@ type TimerType = {
 
 const TimerComponent = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date(`2024-02-06T23:59:59`) - +new Date(); //YYYY-MM-DD
+    const difference = +new Date(`2025-04-26T23:59:59`) - +new Date(); //YYYY-MM-DD
     let timeLeft = {} as TimerType;
 
     if (difference > 0) {
@@ -75,7 +75,7 @@ const TimerComponent = () => {
         </span>
       </div>
       <div className={styles.finalText}>
-        <span>Para nós termos o nosso date perfeito</span>
+        <span>Para nós finalmente começarmos a nossa vida juntos (oficialmente kkkkk)</span>
       </div>
     </div>
   );
