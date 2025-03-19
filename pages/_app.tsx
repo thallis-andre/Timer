@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="title" content="Thallis & Beatriz  ❤️" />
         <meta
           name="description"
-          content="Para finalmente a gente ter o nosso date perfeito"
+          content="Para finalmente você ser minha namorada"
         />
 
         <meta property="og:type" content="website" />
@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:title" content="Thallis & Beatriz  ❤️" />
         <meta
           property="og:description"
-          content="Para finalmente a gente ter o nosso date perfeito"
+          content="Para finalmente você ser minha namorada"
         />
         <meta property="og:image" content="../public/FullLogo.svg" />
 
@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="twitter:title" content="Thallis & Beatriz  ❤️" />
         <meta
           property="twitter:description"
-          content="Para finalmente a gente ter o nosso date perfeito"
+          content="Para finalmente você ser minha namorada"
         />
         <meta property="twitter:image" content="../public/FullLogo.svg" />
       </Head>
