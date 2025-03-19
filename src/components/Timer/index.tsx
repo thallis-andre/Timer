@@ -15,7 +15,7 @@ type TimerType = {
 
 const TimerComponent = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date(`2025-04-26T23:59:59`) - +new Date(); //YYYY-MM-DD
+    const difference = +new Date(`2025-04-12T23:59:59`) - +new Date(); //YYYY-MM-DD
     let timeLeft = {} as TimerType;
 
     if (difference > 0) {
@@ -75,7 +75,7 @@ const TimerComponent = () => {
         </span>
       </div>
       <div className={styles.finalText}>
-        <span>Para nós finalmente começarmos a nossa vida juntos (oficialmente kkkkk)</span>
+        <span>Para finalmente você ser minha namorada</span>
       </div>
     </div>
   );
