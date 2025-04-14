@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import finalImage from '../../../public/FinalImage.jpg';
 import fullLogo from '../../../public/FullLogo.svg';
 import styles from './styles.module.scss';
 
@@ -40,43 +41,56 @@ const TimerComponent = () => {
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timerEnded, setTimerEnded] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
+      const newTimeLeft = calculateTimeLeft();
+      setTimeLeft(newTimeLeft);
+
+      const isTimerEnded =
+        newTimeLeft.weeks === 0 &&
+        newTimeLeft.days === 0 &&
+        newTimeLeft.hours === 0 &&
+        newTimeLeft.minutes === 0 &&
+        newTimeLeft.seconds === 0;
+
+      if (isTimerEnded) {
+        setTimerEnded(true);
+      }
     }, 1000);
   });
 
   return (
     <div className={styles.container}>
-      {/* <span className={styles.title}>UFG Timer</span> */}
-      <Image src={fullLogo} alt="Logo" width={250} height={130} />
-      {/* <div className={styles.counters}>
-        <span className={styles.finalMsg}>Acabou já!</span>
-        <span>Vai aproveitar as férias</span>
-      </div>
-      <img
-        className={styles.imgGif}
-        src="https://i.pinimg.com/originals/3c/1b/79/3c1b796e422435beccdf379027a468d7.gif"
-        alt="gif"
-        height="200px"
-      />  */}
-      <div className={styles.subtitle}>
-        <span>Faltam exatamente:</span>
-      </div>
-      <div className={styles.weekCounter}>
-        <span className={styles.numberWeek}>{timeLeft.weeks}</span>
-        <span>semanas</span>
-      </div>
-      <div className={styles.counters}>
-        <span className={styles.numberInside}>
-          <span>{timeLeft.days}</span>d <span>{timeLeft.hours}</span>h <span>{timeLeft.minutes}</span>
-          min <span>{timeLeft.seconds}</span>s
-        </span>
-      </div>
-      <div className={styles.finalText}>
-        <span>Para finalmente você ser minha namorada</span>
-      </div>
+      {timerEnded ? (
+        <>
+          <Image src={finalImage} alt="Foto final" width={200} height={300} />
+          <div className={styles.finalText}>
+            <span>Sou extremamente feliz por ter você como namorada</span>
+          </div>
+        </>
+      ) : (
+        <>
+          <Image src={fullLogo} alt="Logo" width={250} height={130} />
+          <div className={styles.subtitle}>
+            <span>Faltam exatamente:</span>
+          </div>
+          <div className={styles.weekCounter}>
+            <span className={styles.numberWeek}>{timeLeft.weeks}</span>
+            <span>semanas</span>
+          </div>
+          <div className={styles.counters}>
+            <span className={styles.numberInside}>
+              <span>{timeLeft.days}</span>d <span>{timeLeft.hours}</span>h <span>{timeLeft.minutes}</span>
+              min <span>{timeLeft.seconds}</span>s
+            </span>
+          </div>
+          <div className={styles.finalText}>
+            <span>Para finalmente você ser minha namorada</span>
+          </div>
+        </>
+      )}
     </div>
   );
 };
