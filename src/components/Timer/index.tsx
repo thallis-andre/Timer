@@ -16,7 +16,7 @@ type TimerType = {
 
 const TimerComponent = () => {
   const calculateTimeLeft = () => {
-    const difference = +new Date(`2025-04-12T23:59:59`) - +new Date(); //YYYY-MM-DD
+    const difference = +new Date(`2025-04-26T23:59:59`) - +new Date(); //YYYY-MM-DD
     let timeLeft = {} as TimerType;
 
     if (difference > 0) {
@@ -67,7 +67,7 @@ const TimerComponent = () => {
         <>
           <Image src={finalImage} alt="Foto final" width={200} height={300} />
           <div className={styles.finalText}>
-            <span>Sou extremamente feliz por ter você como namorada </span>
+            <span>Sou extremamente feliz por ter você como namorada</span>
           </div>
         </>
       ) : (
